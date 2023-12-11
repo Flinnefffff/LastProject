@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course List</title>
+    <style>
+        /* Your existing styles here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Course List</h2>
+        <ul id="courseList">
+            <!-- Course items will be dynamically added here -->
+        </ul>
+    </div>
+
+    <script>
+        // Sample course data (replace this with your actual data)
+        var courses = [
+            { courseId: 1, name: 'Course 1', teacher: 'Teacher A' },
+            { courseId: 2, name: 'Course 2', teacher: 'Teacher B' },
+            // Add more courses as needed
+        ];
+
+        // Function to add course items to the list
+        function populateCourseList() {
+            var courseList = document.getElementById('courseList');
+            courseList.innerHTML = ''; // Clear existing list
+
+            courses.forEach(function(course) {
+                var listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <strong>Course ID:</strong> ${course.courseId} <br>
+                    <strong>Name:</strong> ${course.name} <br>
+                    <strong>Teacher:</strong> ${course.teacher} <br>
+                    <hr>
+                `;
+                courseList.appendChild(listItem);
+            });
+        }
+
+        // Call the function to populate the course list
+        populateCourseList();
+    </script>
+</body>
+</html>

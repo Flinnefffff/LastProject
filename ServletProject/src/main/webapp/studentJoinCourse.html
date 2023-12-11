@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Join Course</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+        form {
+            width: 50%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+        }
+        td {
+            padding: 10px;
+        }
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Join Course</h1>
+    
+    <form method="post" action="studentJoinCourseServlet">
+        <table>
+            <tr>
+                <td><label for="studentId">Student ID:</label></td>
+                <td><input type="text" id="studentId" name="studentId" required></td>
+            </tr>
+            <tr>
+                <td><label for="courseId">Course ID:</label></td>
+                <td><input type="text" id="courseId" name="courseId" required></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Join Course"></td>
+            </tr>
+        </table>    
+    </form>
+</body>
+</html>

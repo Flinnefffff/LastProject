@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+
+  <!-- Define context parameters for database -->
+  <context-param>
+    <param-name>driverClass</param-name>
+    <param-value>org.mariadb.jdbc.Driver</param-value>
+  </context-param>
+  <context-param>
+    <param-name>db_user</param-name>
+    <param-value>e2101089</param-value>
+  </context-param>
+  <context-param>
+    <param-name>db_password</param-name>
+    <param-value>yeBvxVDHGWV</param-value>
+  </context-param>
+
+  <!-- Define a servlet -->
+  <servlet>
+    <servlet-name>StudentServlet</servlet-name>
+    <servlet-class>your.package.path.StudentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentServlet</servlet-name>
+    <url-pattern>/students/*</url-pattern>
+  </servlet-mapping>
+
+  <!-- Define another servlet for courses -->
+  <servlet>
+    <servlet-name>CourseServlet</servlet-name>
+    <servlet-class>your.package.path.CourseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CourseServlet</servlet-name>
+    <url-pattern>/courses/*</url-pattern>
+  </servlet-mapping>
+
+</web-app>

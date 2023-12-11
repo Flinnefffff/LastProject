@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        table {
+            width: 100%;
+        }
+        td {
+            padding: 8px 0;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: calc(100% - 16px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        #error-container {
+            text-align: center;
+            color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="loginServlet">
+        <h1>Login Page</h1>
+        <!-- Displaying the error message -->
+        <div id="error-container"></div>
+
+        <!-- Login form -->
+        <table>
+            <tr>
+                <td>Username</td>
+                <td><input name="username" required /></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input name="password" type="password" required/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Login" /></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        // Get the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+
+        // Function to display error message if 'error' parameter is present
+        if (error === 'incorrect_password') {
+            const errorDiv = document.createElement('div');
+            errorDiv.textContent = 'Incorrect password. Please try again.';
+            errorDiv.id = 'error-message';
+
+            // Append this errorDiv after the form
+            document.getElementById('error-container').appendChild(errorDiv);
+        }
+    </script>
+</body>
+</html>
+
+</html>
